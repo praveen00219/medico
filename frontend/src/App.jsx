@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="mx-5 sm:mz-[10%]">
+    <div className="md:mx-20 mx-5 sm:mz-[10%]">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -3,32 +3,34 @@ import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div className="flex bg-primary rounded-lg px-6 sm:px-10 md:px-14 lg:px-12 my-20 md:mx-10">
+    <div className="flex flex-col md:flex-row items-center bg-primary rounded-lg p-6  sm:p-8 md:p-9 my-10  gap-8">
       {/* Left Side */}
-      <div className="flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5">
-        <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold text-white">
-          <p>Book Appointment</p>
-          <p className="mt-4">With 100+ Trusted Doctors</p>
-        </div>
+      <div className="flex-1 text-center md:text-left">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-snug">
+          Book Appointment
+        </h1>
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white mt-4">
+          With 100+ Trusted Doctors
+        </p>
         <button
           onClick={() => {
-            naviagte("/login");
+            navigate("/login");
             scrollTo(0, 0);
           }}
-          className="bg-white text-sm sm:text-base text-gray-600 px-8 py-3 rounded-full mt-6 hover:scale-105 transition-all"
+          className="bg-white text-gray-600 text-sm sm:text-base px-6 py-3 rounded-full mt-6 hover:scale-105 transition-all shadow-md hover:shadow-lg"
         >
-          Cerate account
+          Create Account
         </button>
       </div>
 
       {/* Right Side */}
-      <div className="hidden md:block md:w-1/2 lg:w-[370px] relative">
+      <div className="w-full md:w-1/2 lg:w-[300px] flex justify-center relative">
         <img
-          className="w-full absolute bottom-0 right-0 max-w-md"
+          className="w-full max-w-xs sm:max-w-sm md:absolute md:top-1/2 md:transform md:-translate-y-2/3 md:right-0 md:max-w-md lg:max-w-lg"
           src={assets.appointment_img}
-          alt="Appointment_img"
+          alt="Appointment"
         />
       </div>
     </div>
